@@ -72,15 +72,16 @@ loadMoreBtn.refs.button.addEventListener('click', onClick);
 
 async function onSearch(e) {
   e.preventDefault();
+
   if (
-    photoService.query === e.currentTarget.elements.searchQuery.value.trim()
-  ) {
-    return;
-  } else if (
-    photoService.query !== e.currentTarget.elements.searchQuery.value.trim() &&
+    photoService.query === e.currentTarget.elements.searchQuery.value.trim() &&
     !photoService.query
   ) {
     Notify.failure('Sorry, but you must enter a value');
+    return;
+  } else if (
+    photoService.query === e.currentTarget.elements.searchQuery.value.trim()
+  ) {
     return;
   }
 
@@ -144,5 +145,3 @@ async function onClick() {
     console.log(err);
   }
 }
-
-glglglglglggl;
