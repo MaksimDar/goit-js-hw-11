@@ -77,7 +77,7 @@ async function onSearch(e) {
   ) {
     return;
   } else if (
-    photoService.query === e.currentTarget.elements.searchQuery.value.trim() &&
+    photoService.query !== e.currentTarget.elements.searchQuery.value.trim() &&
     !photoService.query
   ) {
     Notify.failure('Sorry, but you must enter a value');
